@@ -1,0 +1,10 @@
+echo "Who do you want to delete ?"
+read u
+output=$(who | grep $u)
+if [ -z "$output" ]
+then
+	exit
+else
+	killall -KILL -u $u
+	deluser --remove-home $u
+fi
