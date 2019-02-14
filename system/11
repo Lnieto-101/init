@@ -1,1 +1,1 @@
-parted -l
+df -h

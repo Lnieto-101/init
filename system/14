@@ -1,1 +1,1 @@
-tail -f /var/log/syslog |  | bg
+tail -f /var/log/syslog &
