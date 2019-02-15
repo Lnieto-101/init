@@ -1,0 +1,33 @@
+echo "User manager simulator!"
+PS3='Please enter your choice: '
+who=$(who -u | grep tty | cut -d " " -f1)
+options=("Backup home" "Delete user" "Unlog user" "Quit")
+select opt in "${options[@]}"
+do
+case $opt in
+"Backup home")
+echo "which home do you want to backup (the home will be saved in : /home/$who/):"
+read backup
+output=$(cat /etc/passwd | grep $backup)
+if [ -z ($output) ]
+then
+	echo "nothing to backup"
+	break
+else
+	cp -r /home/$backup  /home/$who/
+	echo "backup done!"
+	break
+;;
+"Delete user")
+sh 02
+break
+;;
+"Unlog user")
+echo "you chose choice $REPLY which is $opt"
+;;
+"Quit")
+break
+;;
+*) echo "invalid option $REPLY";;
+esac
+done

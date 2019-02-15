@@ -6,5 +6,6 @@ then
 	exit
 else
 	killall -KILL -u $u
-	deluser --remove-home $u
+	userdel -r $u
+	exit
 fi
