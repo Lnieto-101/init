@@ -9,7 +9,7 @@ case $opt in
 echo "which home do you want to backup (the home will be saved in : /home/$who/):"
 read backup
 output=$(cat /etc/passwd | grep $backup)
-if [ -z ($output) ]
+if [ -z "$output" ]
 then
 	echo "nothing to backup"
 	break
