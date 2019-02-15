@@ -1,7 +1,7 @@
 echo "User manager simulator!"
 PS3='Please enter your choice: '
 who=$(who -u | grep tty | cut -d " " -f1)
-options="Backup home" "Delete user" "Unlog user" "Quit"
+options=('Backup home' 'Delete user' 'Unlog user' 'Quit')
 #options[1]=Backup home
 #options[2]=Delete user
 #options[3]=Unlog user
