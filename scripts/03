@@ -17,6 +17,7 @@ else
 	cp -r /home/$backup  /home/$who/
 	echo "backup done!"
 	break
+fi
 ;;
 "Delete user")
 sh 02
